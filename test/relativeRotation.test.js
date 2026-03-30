@@ -1,6 +1,6 @@
 import {expect} from "chai";
 
-import {relativeRotation, Transform } from  "@kshell/transforms";
+import {relativeRotation, Transform } from  "@kshell/iiif-x3d-transforms";
 import {S,R,T} from "./setup/build_manifesto_transform.js";
 import {Vector3} from "threejs-math";
 

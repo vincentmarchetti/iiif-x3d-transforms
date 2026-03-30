@@ -1,6 +1,6 @@
 import {expect} from "chai";
 
-import {Transform} from  "@kshell/transforms";
+import {Transform} from  "@kshell/iiif-x3d-transforms";
 import {S,R,T} from "./setup/build_manifesto_transform.js";
 import {Vector3} from "threejs-math";
 

@@ -1,6 +1,6 @@
 import * as chai from  "chai";
 import chaiAlmost from "chai-almost";
-import {chaiTransforms} from "@kshell/transforms/chai-transforms";
+import {chaiTransforms} from "@kshell/iiif-x3d-transforms/chai-transforms";
 
 
 chai.use(chaiAlmost());
