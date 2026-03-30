@@ -1,5 +1,5 @@
 {
-  "name": "@kshell/transforms",
+  "name": "@kshell/iiif-x3d-transforms",
   "exports" : {
     "." :"./dist/index.js",
     "./chai-transforms" : "./packages/chai-transforms/index.mjs"
