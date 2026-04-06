@@ -398,3 +398,21 @@ export function relativeRotation( base: Translation, aimAt : Translation): Rotat
         new Quaternion().setFromEuler( new Euler(x_ang,y_ang,0.0,"YXZ") , false)
     );
 }
+
+export function directionFromOrientation(rotation:Rotation):Translation{
+    /*
+    The direction is calculated as the rotation applied to the -Y axis,
+    which according to Presentation 4 is the default direction of
+    SpotLight and DirectionalLight
+    */
+    const dirVect:Vector3 = new Vector3(0.0,-1.0,0.0).applyQuaternion(rotation.quat);
+    return new Translation(dirVect);
+}
+
+export function directionFromDisplacement(base: Translation, aimAt : Translation): Translation | null {
+    const direction:Vector3 = new Vector3().subVectors( base.vect, aimAt.vect);
+    
+    // edge case; the base and aimAt are the same location. return null
+    if (direction.length() == 0.0) return null;
+    return direction.normalize();
+}
