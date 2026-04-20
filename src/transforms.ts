@@ -410,9 +410,9 @@ export function directionFromOrientation(rotation:Rotation):Translation{
 }
 
 export function directionFromDisplacement(base: Translation, aimAt : Translation): Translation | null {
-    const direction:Vector3 = new Vector3().subVectors( base.vect, aimAt.vect);
+    const direction:Vector3 = new Vector3().subVectors(  aimAt.vect, base.vect );
     
     // edge case; the base and aimAt are the same location. return null
     if (direction.length() == 0.0) return null;
-    return direction.normalize();
+    return new Translation(direction.normalize());
 }
